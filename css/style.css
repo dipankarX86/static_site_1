@@ -604,6 +604,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   box-shadow: 10px 10px 15px rgba(73, 78, 92, 0.1);
   background: #fff;
   transition: 0.4s;
+  display: flex;
 }
 
 #products .box:hover {
@@ -613,28 +614,35 @@ body.mobile-nav-active #mobile-nav-toggle {
   -moz-transform: translateY(-10px);
 }
 
-#products .box .icon {
-  float: left;
+@media (max-width: 1199px) {
+  #products .box {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media (max-width: 991px) {
+  #products .box {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+@media (max-width: 766px) {
+  #products .box {
+    flex-direction: row;
+    align-items: center;
+  }
 }
 
-#products .box .icon i {
-  color: #444;
-  font-size: 64px;
-  transition: 0.5s;
-  line-height: 0;
-  margin-top: 34px;
+.inner-box1 {
+  display: flex;
+  /* border: 1px solid #eee; */
 }
-
-#products .box .icon i:before {
-  background: #0c2e8a;
-  background: linear-gradient(45deg, #50d8af 0%, #a3ebd5 100%);
-  background-clip: border-box;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.inner-box2 {
+  /* border: 1px solid #eee; */
 }
 
 #products .box h4 {
-  margin-left: 100px;
+  margin-left: 15px;
   font-weight: 700;
   margin-bottom: 15px;
   font-size: 22px;
@@ -646,7 +654,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 #products .box p {
   font-size: 14px;
-  margin-left: 100px;
+  margin-left: 15px;
   margin-bottom: 0;
   line-height: 24px;
 }
@@ -654,11 +662,6 @@ body.mobile-nav-active #mobile-nav-toggle {
 @media (max-width: 767px) {
   #products .box .box {
     margin-bottom: 20px;
-  }
-  #products .box .icon {
-    float: none;
-    text-align: center;
-    padding-bottom: 15px;
   }
   #products .box h4, #products .box p {
     margin-left: 0;
