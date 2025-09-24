@@ -1096,10 +1096,16 @@ iframe {
   border: 0;
 }
 
+
 /* About us image grids */
 .about-wrapper {
-  margin: 5em auto 0 auto;
+  margin: 0 auto 0 auto;
   max-width: 800px;
+}
+@media (max-width: 996px) {
+  .about-wrapper {
+    display: none;
+  }
 }
 .about-wrapper img {
   max-width: 100%;
