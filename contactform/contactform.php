@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $message = htmlspecialchars(trim($_POST['message']));
 
     // Your receiving email address
-    $to = "er.dipankarsaikia@gmail.com";  // <-- Replace with your own email address
+    $to = "lexiconelevatorss@gmail.com";  // <-- Replace with your own email address
 
     // Email subject and body
     $subject = "New message from your website Lexicon Elevators: $name";
@@ -40,11 +40,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Close the file
         fclose($file_pointer);
 
-        echo "Data appended successfully to '$filename'.";
-    } else {
-        echo "Error: Could not open the file '$filename'.";
+        // echo "Data appended successfully to '$filename'.";
     }
-    //
 
 
     // Email headers
@@ -55,61 +52,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Send the email
     if (mail($to, $subject, $body, $headers)) {
         // Success message
-        echo "
-        <html>
-        <head>
-          <title>Message Sent</title>
-          <style>
-            body {
-              font-family: Arial, sans-serif;
-              background-color: #f2f2f2;
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              height: 100vh;
-              margin: 0;
-            }
-            .box {
-              background: white;
-              padding: 30px 40px;
-              border-radius: 10px;
-              box-shadow: 0 0 10px rgba(0,0,0,0.1);
-              text-align: center;
-            }
-            h2 { color: #25d366; }
-            a.button {
-              display: inline-block;
-              margin-top: 15px;
-              padding: 10px 20px;
-              background-color: #25d366;
-              color: white;
-              text-decoration: none;
-              border-radius: 5px;
-              transition: 0.3s;
-            }
-            a.button:hover {
-              background-color: #1ebe57;
-            }
-          </style>
-        </head>
-        <body>
-          <div class='box'>
-            <h2>✅ Thank You!</h2>
-            <p>Your message has been sent successfully.</p>
-            <a href='javascript:history.back()' class='button'>Go Back</a>
-          </div>
-        </body>
-        </html>";
+        echo "Thank You!";
     } else {
         // Error message
-        echo "
-        <html>
-        <head><title>Error</title></head>
-        <body>
-          <h3>❌ Oops! Something went wrong. Please try again later.</h3>
-          <a href='javascript:history.back()'>Go Back</a>
-        </body>
-        </html>";
+        echo "Oops! Something went wrong. Please try again later.";
     }
 
 } else {
